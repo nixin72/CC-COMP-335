@@ -1,0 +1,16 @@
+digraph pda {
+    "" [shape=none, label="?={a,b}"]
+    Qs, q0, q1 [shape=circle]
+    Qf1, Qf2, Qf3 [shape=doublecircle]
+
+    "" -> Qs [label=start]
+    Qs -> q2 [label=" a, Z ; aZ"]
+    q2 -> Qf2 [label=" b, a ; bZ"]
+    Qf2 -> Qf2 [label=" b, b ; bb"]
+    Qs -> q0 [label=" a, Z ; aZ"]
+    q0 -> Qf3 [label=" b, a ; Z"]
+    q0 -> q0 [label=" a, a ; aa"]
+    q0 -> q1 [label=" b, a ; ?"]
+    q1 -> q1 [label=" b, a ; ?"]
+    q1 -> Qf1 [label=" ?, Z ; Z"]
+}

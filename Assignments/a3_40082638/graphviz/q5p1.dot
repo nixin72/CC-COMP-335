@@ -1,0 +1,18 @@
+digraph dfa {
+    "Σ" [label="Σ={a,b}" shape=none]
+    Qs [shape=circle]
+    q1,q2,q3,q4,q5,q6,q7,q8,q9 [shape=doublecircle]
+
+
+    "Σ" -> Qs [label=start]
+    Qs -> q1 [label=Σ]
+    q1 -> q2 [label=Σ]
+    q2 -> q3 [label=Σ]
+    q3 -> q4 [label=Σ]
+    q4 -> q5 [label=Σ]
+    q5 -> q6 [label=Σ]
+    q6 -> q7 [label=Σ]
+    q7 -> q8 [label=Σ]
+    q8 -> q9 [label=Σ]
+    q9 -> Qs [label=Σ]
+}

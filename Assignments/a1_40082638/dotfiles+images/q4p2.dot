@@ -1,0 +1,26 @@
+digraph dfa {
+    "" [label="Σ = {a,b}", shape=none]
+    Qs,q1,q2,q3,q5,q6,q7 [shape=doublecircle]
+    q4,q8 [shape=circle]
+
+    "" -> Qs [label=start]
+    Qs -> q1 [label=a]
+
+    q1 -> q2 [label=a]
+    q2 -> q3 [label=a]
+    q3 -> q4 [label=a]
+
+    Qs -> q5 [label=b]
+    q5 -> q6 [label=b]
+    q6 -> q7 [label=b]
+    q7 -> q8 [label=b]
+
+    q1 -> Qs [label=b]
+    q2 -> q5 [label=b]
+    q5 -> Qs [label=a]
+    q6 -> q2 [label=a]
+    q3 -> q6 [label=b]
+    q7 -> q3 [label=a]
+    q4 -> q4 [label=a]
+    q8 -> q8 [label=b]
+}

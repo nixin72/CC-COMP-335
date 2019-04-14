@@ -1,0 +1,31 @@
+digraph nfa {
+    "" [shape=none]
+    Qs, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12 [shape=circle]
+
+    Qf [shape=doublecircle]
+
+    "" -> Qs [label=start]
+    Qs -> q0 [label=0]
+    q0 -> q1 [label=0]
+    q1 -> q2 [label=0]
+    q2 -> Qs [label=ϵ]
+
+    q2 -> q3 [label=ϵ]
+    q2 -> q4 [label=ϵ]
+    q2 -> q5 [label=ϵ]
+
+    q3 -> Qf [label=ϵ]
+
+    q4 -> q6 [label=0]
+    q6 -> q7 [label=1]
+    q7 -> Qf [label=1]
+
+    q5 -> q8 [label=0]
+    q8 -> q9 [label=0]
+    q9 -> Qf [label=1]
+
+    Qf -> q10 [label=1]
+    q10 -> q11 [label=1]
+    q11 -> q12 [label=1]
+    q12 -> Qf [label=ϵ]
+}

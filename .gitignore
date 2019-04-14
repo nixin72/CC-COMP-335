@@ -1,0 +1,8 @@
+*.exe
+*.pdf
+*/MARIE/
+*.lst
+*.map
+*.mex
+*.jar
+*.class

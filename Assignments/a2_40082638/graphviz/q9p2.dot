@@ -1,0 +1,18 @@
+digraph dfa {
+    "" [shape=none]
+    Qs, q0, q1, q2, q3, q4, q5 [shape=circle]
+    q1, q4 [shape=doublecircle]
+
+    "" -> Qs [label=start]
+    Qs -> q0 [label=a]
+    q0 -> q0 [label=a]
+    q0 -> q1 [label=b]
+    q1 -> q2 [label="a, b"]
+    Qs -> q3 [label=b]
+    q3 -> q4 [label=a]
+    q4 -> q2 [label="a, b"]
+    q3 -> q5 [label=b]
+    q5 -> q5 [label=b]
+    q5 -> q4 [label=a]
+    q2 -> q2 [label="a, b"]
+}

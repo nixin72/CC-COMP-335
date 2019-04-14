@@ -1,0 +1,22 @@
+digraph dfa {
+    //Accepts: abb, abaabb, aaabb
+    //Rejects: aaa, aabbbb, abaab
+
+    //States
+    Σ [label="Σ={a,b}", shape=none]
+    Qs,q0,q1 [shape=circle]
+    Qf [shape=doublecircle]
+
+    Σ -> Qs [label=start]
+    //Happy Path
+    Qs -> Qs [label=b]
+    Qs -> q0 [label=a]
+    q0 -> q1 [label=b]
+    q1 -> Qf [label=b]
+    Qf -> Qf [label=b]
+
+    //Fall back to Qs
+    q0 -> Qs [label=a]
+    q1 -> Qs [label=a]
+    Qf -> Qs [label=a]
+}

@@ -1,0 +1,23 @@
+digraph nfa {
+    //Accepts: 00, 001, 100, 1010110
+    //Rejects: 0, 01, 010, 10101010
+
+    //States
+    Σ [label="Σ={0,1}", shape=none]
+    Qs,q0,q1,q2,q3 [shape=circle]
+    Qf [shape=doublecircle]
+
+    Σ -> Qs [label=start]
+    //Happy Path
+    Qs -> Qs [label=Σ]
+    Qs -> q0 [label=0]
+
+        //Multiple of 4
+        q0 -> q1 [label=Σ]
+        q1 -> q2 [label=Σ]
+        q2 -> q3 [label=Σ]
+        q3 -> q0 [label=Σ]
+
+    q0 -> Qf [label=0]
+    Qf -> Qf [label=Σ] //Followed by anything
+}

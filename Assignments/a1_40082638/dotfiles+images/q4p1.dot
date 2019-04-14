@@ -1,0 +1,23 @@
+digraph dfa {
+    //Accepts: bab, abab, bbabbb
+    //Rejects: bbb, abaa, bbbaaa
+
+    //States
+    Σ [label="Σ={a,b}", shape=none]
+    Qs,Qf1,Qf2 [shape=doublecircle]
+    q0 [shape=circle]
+
+    Σ -> Qs [label=start]
+    //Happy Path
+    Qs -> Qf1 [label=b]
+    Qf1 -> Qf2 [label=a]
+    Qf2 -> q0 [label=b]
+
+    //bab is broken, go back to Qs
+    Qf2 -> Qs [label=a]
+
+    //Self loops
+    Qs -> Qs [label=a] //Any number of a's at the beginning
+    Qf1 -> Qf1 [label=b] //bbbbbbab
+    q0 -> q0 [label=Σ] //once bab is seen, anything can occur
+}

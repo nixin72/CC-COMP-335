@@ -1,0 +1,10 @@
+digraph pda {
+    "" [shape=none, label="Σ={a,b}"]
+    Qs, q0 [shape=circle]
+    Qf [shape=doublecircle]
+
+    "" -> Qs [label=start]
+    Qs -> q0 [label="a, Z ; aZ"]
+    q0 -> q0 [label="a, a ; aa"]
+    q0 -> Qf [label="b, a ; Z"]
+}

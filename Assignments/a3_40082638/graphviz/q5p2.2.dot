@@ -1,0 +1,11 @@
+digraph dfa {
+    "" [label="start" shape=none]
+    q0, q1 [shape=circle]
+    q2 [shape=doublecircle]
+
+    "" -> q0
+    q0 -> q0 [label="a,X|XX    a,Z|XZ"]
+    q0 -> q1 [label="?,X|X    ?,Z|Z"]
+    q1 -> q1 [label="b,X|?"]
+    q1 -> q2 [label="?,Z|Z"]
+}

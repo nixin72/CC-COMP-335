@@ -1,0 +1,15 @@
+digraph dfa {
+    "" [shape=none]
+    A, B, C [shape=circle]
+    D [shape=doublecircle]
+
+    "" -> A [label=start]
+    A -> A [label=1]
+    A -> B [label=0]
+    B -> A [label=0]
+    B -> C [label=1]
+    C -> B [label=1]
+    C -> D [label=0]
+    D -> D [label=0]
+    D -> A [label=1]
+}

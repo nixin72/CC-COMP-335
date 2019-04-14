@@ -1,0 +1,11 @@
+digraph pda {
+    // {a^hb^ka^mb^n∶ h+k=m+n}
+    Qs, q0, q1, q2, q3 [shape=circle]
+    Qf [shape=doublecircle]
+
+    "" [shape=none, label="Σ={a,b}"]
+    "" -> Qs [label=start]
+    Qs -> Qs [label="b, e ; b\na, e ; a"]
+    Qs -> q0 [label="e, S ; e"]
+    q0 -> Qf [label="e, Z ; e"]
+}

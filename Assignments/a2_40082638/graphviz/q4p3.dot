@@ -1,0 +1,45 @@
+digraph nfa {
+    "" [shape=none]
+    Qs, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12,q13,q14,q15,q16,q17,q18,q19,q20,q21 [shape=circle]
+
+    Qs, Qf1, Qf2, Qf3 [shape=doublecircle]
+
+    "" -> Qs [label=start]
+    Qs -> q0 [label=ϵ]
+    Qs -> q7 [label=ϵ]
+    Qs -> q14 [label=ϵ]
+
+    q0 -> q1 [label=ϵ]
+    q1 -> q2 [label=0]
+    q2 -> q3 [label=1]
+    q3 -> Qf1 [label=ϵ]
+    q0 -> q4 [label=ϵ]
+    q4 -> q5 [label=1]
+    q5 -> q6 [label=0]
+    q6 -> Qf1 [label=ϵ]
+    Qf1 -> q0 [label=ϵ]
+
+
+    q7 -> q8 [label=ϵ]
+    q8 -> q9 [label=0]
+    q9 -> q10 [label=0]
+    q10 -> Qf2 [label=ϵ]
+    q7 -> q11 [label=ϵ]
+    q11 -> q12 [label=1]
+    q12 -> q13 [label=1]
+    q13 -> Qf2 [label=ϵ]
+    Qf2 -> q7 [label=ϵ]
+
+
+    q14 -> q15 [label=ϵ]
+    q15 -> q16 [label=1]
+    q16 -> Qf3 [label=ϵ]
+    q14 -> q17 [label=1]
+    q17 -> q18 [label=0]
+    q18 -> Qf3 [label=ϵ]
+    q14 -> q19 [label=1]
+    q19 -> q20 [label=0]
+    q20 -> q21 [label=0]
+    q21 -> Qf3 [label=ϵ]
+    Qf3 -> q14 [label=ϵ]
+}
